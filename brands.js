@@ -19,10 +19,10 @@ for (i=321; i<=window.innerWidth; i++) {
     swiper.destroy();
   }
 
-  var btnRM = document.querySelector('.info__button--readmore');
+  var btnRM = document.querySelector('.brands__button--readmore');
   var list = document.querySelector('.list');
   var elements = list.querySelectorAll('.list__element');
-  var btnHD = document.querySelector('.info__button--hide');
+  var btnHD = document.querySelector('.brands__button--hide');
   
   if (window.innerWidth>1119) {
     elements[6].classList.remove('list__element--hidden');
@@ -31,8 +31,8 @@ for (i=321; i<=window.innerWidth; i++) {
 
   btnRM.addEventListener('click', function() {
 
-    btnRM.classList.remove('info__button--show');
-    btnHD.classList.add('info__button--show');
+    btnRM.classList.remove('brands__button--show');
+    btnHD.classList.add('brands__button--show');
 
     if (window.innerWidth>1119) {
     for (i = 8; i <  elements.length; i++) {
@@ -47,8 +47,8 @@ for (i=321; i<=window.innerWidth; i++) {
 
   btnHD.addEventListener('click', function() {
 
-    btnHD.classList.remove('info__button--show');
-    btnRM.classList.add('info__button--show');
+    btnHD.classList.remove('brands__button--show');
+    btnRM.classList.add('brands__button--show');
 
     if (window.innerWidth>1119) {
     for (i = 8; i <  elements.length; i++) {
