@@ -11,52 +11,51 @@ for (i=321; i<=window.innerWidth; i++) {
     pagination: {
       el: ".swiper-pagination",
       clickable: false,
-    }, 
-    
+    },  
   });
    
   if (window.innerWidth>767) {
     swiper.destroy();
   }
 
-  var btnRM = document.querySelector('.brands__button--readmore');
-  var list = document.querySelector('.list');
+  var buttons = document.querySelectorAll('.brands__button');
+  var list = document.querySelector('.brands__list');
   var elements = list.querySelectorAll('.list__element');
-  var btnHD = document.querySelector('.brands__button--hide');
   
   if (window.innerWidth>1119) {
-    elements[6].classList.remove('list__element--hidden');
-    elements[7].classList.remove('list__element--hidden');
+    elements[6].style.display= 'flex';
+    elements[7].style.display= 'flex';
   }
 
-  btnRM.addEventListener('click', function() {
+  
+  buttons[0].addEventListener('click', function() {
 
-    btnRM.classList.remove('brands__button--show');
-    btnHD.classList.add('brands__button--show');
+    buttons[0].style.display = 'none';
+    buttons[1].style.display= 'block';
+    
+     if (window.innerWidth>1119) {
+     for (i = 8; i <  elements.length; i++) {
+       elements[i].style.display= 'flex';
+     } 
+   } else {
+     for (i = 6; i <  elements.length; i++) {
+       elements[i].style.display= 'flex';
+     } 
+   }
+   });
 
+   buttons[1].addEventListener('click', function() {
+
+    buttons[1].style.display = 'none';
+    buttons[0].style.display= 'block';
+ 
     if (window.innerWidth>1119) {
     for (i = 8; i <  elements.length; i++) {
-      elements[i].classList.remove('list__element--hidden');
-    } 
-  } else {
-    for (i = 6; i <  elements.length; i++) {
-      elements[i].classList.remove('list__element--hidden');
-    } 
-  }
-  });
-
-  btnHD.addEventListener('click', function() {
-
-    btnHD.classList.remove('brands__button--show');
-    btnRM.classList.add('brands__button--show');
-
-    if (window.innerWidth>1119) {
-    for (i = 8; i <  elements.length; i++) {
-      elements[i].classList.add('list__element--hidden');
+      elements[i].style.display = 'none';
    }
   } else {
     for (i = 6; i <  elements.length; i++) {
-      elements[i].classList.add('list__element--hidden');
+      elements[i].style.display = 'none';
     }
    }  
   });

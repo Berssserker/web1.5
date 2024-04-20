@@ -14,6 +14,7 @@ body {
 
 .brands {
     margin: auto;
+    margin-bottom: 32px;
     background-color: #F8F8F8;
 }
 
@@ -94,7 +95,7 @@ body {
 }
 
 .brands__button {
-    margin: 24px 0 32px 57px;
+    margin: 24px 0 34px 57px;
     display: none;
     font-family: TTLakes-Medium;
     line-height: 24px;
@@ -106,16 +107,24 @@ body {
     background: none;
 }
 
-.brands__expand {
+.brands__button::before {
+    content: url(images/expand.svg);
     left: 24px;
     width: 24px;
     height: 24px;
     position: absolute;
-    background-image: url(images/expand.svg);
 }
 
-.brands__expand--hide {
-    background-image: url(images/expand2.svg);
+.brands__button:last-child {
+    display: none;
+}   
+
+.brands__button:last-child::before {
+content: url(images/expand2.svg);
+left: 24px;
+width: 24px;
+height: 24px;
+position: absolute;
 }
 
 span.swiper-pagination-bullet {
@@ -132,6 +141,32 @@ span.swiper-pagination-bullet-active {
 
  @media (min-width: 768px) {
 
+    .list__element--7 {
+        display: none;
+    }
+    
+    .list__element--8 {
+        display: none;
+    }
+
+    
+    .list__element--9 {
+        display: none;
+    }
+    
+    .list__element--10 {
+        display: none;
+    }
+
+    .list__element--11 {
+        display: none;
+    }
+    
+
+    .brands__button {
+        display: block;
+    }
+
     .swiper-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -141,12 +176,9 @@ span.swiper-pagination-bullet-active {
         width:248px;
     }
 
-    .list {
+    .brands__list {
         flex-direction: column; 
         display: flex;
-    }
-
-    .brands__list {
         margin: 8px 0 0 0;
     }
 
@@ -155,18 +187,10 @@ span.swiper-pagination-bullet-active {
         margin: 16px 0 0 24px;
     } 
 
-    .list__element--hidden {
-        display: none;
-    }
-
-    .head {
+    .brands__head {
         padding: 16px 0 0 24px;
     }
-
-    .brands__button--show {
-        display: block;
-    }
-}
+ }
 
 @media (min-width: 1120px) {
 
@@ -179,11 +203,15 @@ span.swiper-pagination-bullet-active {
         margin: 16px 0 0 32px;
     } 
 
-    .head {
+    .brands__head {
         padding: 16px 0 0 32px;
     }
 
-    .brands__expand {
+    .brands__button::before {
+        left: 32px;
+        } 
+
+    .brands__button:last-child::before {
         left: 32px;
     }
 
